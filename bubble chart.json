@@ -4,7 +4,7 @@
   "height": 225,
   "title": {"text":"Number of university students","fontSize":20},
   "data": {
-    "url": "https://raw.githubusercontent.com/crycryzzz/homework2/main/population.csv"
+    "url": "https://raw.githubusercontent.com/crycryzzz/Assignment-2/main/population.csv"
   },
   "params": [
     {
