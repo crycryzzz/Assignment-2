@@ -1,0 +1,150 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 350,
+  "height": 225,
+  "title": {"text":"Number of undergraduate students","fontSize":20},
+  "data": {
+    "url": "https://raw.githubusercontent.com/crycryzzz/vis2/main/population.csv"
+  },
+  "params": [
+    {
+      "name": "Continent_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "East South Central",
+          "Oacific",
+          "Mountain",
+          "West Sorth Central",
+          "New England",
+          "South Atlantic",
+          "East North Central",
+          "West North Central",
+          "Mid-Atantic"
+        ],
+        "labels":[
+          "Show All",
+          "East South Central",
+          "Oacific",
+          "Mountain",
+          "West Sorth Central",
+          "New England",
+          "South Atlantic",
+          "East North Central",
+          "West North Central",
+          "Mid-Atantic"
+        ],
+        "name": "Continent Selection: "
+      }
+    }
+  ],
+  "transform": [
+      {
+        "filter": "Continent_selection == null || datum.Continent == Continent_selection"
+      }
+    ],
+  "encoding": {
+    "x": {
+      "field": "Undergraduate Population",
+      "type": "quantitative",
+      "title": "Undergraduate Population",
+      "axis": {"tickCount": 7},
+    "scale": { "domain": [10000, 800000]}
+  },
+    "y": {
+      "field": "Number of universities",
+      "type": "quantitative",
+      "title": "NUmber of universities",
+      "axis": {"tickCount": 7},
+      "scale": {"domain": [0, 100]}
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "continent_highlight": {
+          "type": "multi",
+          "fields": ["Continent"],
+          "bind": "legend"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "Undergraduate Population",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [50000,100000, 200000, 300000, 400000],
+            "range": [10, 50, 150, 250, 400, 600]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {
+          "field": "Continent",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "East South Central",
+              "Oacific",
+              "Mountain",
+              "West Sorth Central",
+              "New England",
+              "South Atlantic",
+              "East North Central",
+              "West North Central",
+              "Mid-Atantic"
+            ],
+            "range": [
+              "#D200D2",
+              "#EA0000",
+              "#8600FF",
+              "#00E3E3",
+              "#02F78E",
+              "#F9F900",
+              "#FF8000",
+              "#AD5A5A",
+              "#5CADAD"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": {"selection": "continent_highlight", "value": 0.6},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "NAME", "type": "nominal"},
+          {"field": "Undergraduate Population", "type": "quantitative", "format": ","},
+          {"field": "Number of universities", "type": "quantitative", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 12,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "NAME", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['NAME'] == 'California' || datum['NAME'] == 'Vermont' || datum['NAME'] == 'New York'|| datum['NAME'] == 'Texas'|| datum['NAME'] == 'Florida'|| datum['NAME'] == 'Ohio'|| datum['NAME'] == 'Pennsylvania' ",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "NAME", "type": "nominal"},
+          {"field": "Undergraduate Population", "type": "quantitative", "format": ","},
+          {"field": "Number of universities", "type": "quantitative", "format": ","}
+        ]
+      }
+    }
+  ]
+}

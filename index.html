@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap" rel="stylesheet"> 
+    
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+    
+  </head>
+
+</head>
+<body>
+    <center>
+      <h1 style="color:#db1450; font-size: 50px",>Universities in the U.S. </h1>
+      <p style="text-align: center; font-size: 15px;"><i>By ChengRuiyuan
+      <br>
+        Student ID: 30957982</i></p>
+    </center>
+    <br>
+    <br>
+<!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1">
+               <p style="font-size:25px; text-align: center;color: #b4465e;">
+                <b>Number of universities in each state</b>
+            </p>
+        </div>
+
+        <div class="pure-u-1">
+          <div id="vis1" style="margin-top: 0%; padding: right 0%; padding-left: 10%"></div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="pure-u-1">
+      <p style="margin-top: 0%;padding-right:0%; padding-left: 3%; color: #b4465e; font-size:17px;text-align: center;">
+        As shown on the map above, <b style="color: #5a14db;font-size:20px">American universities</b> are mainly concentrated in <b style="color: #5a14db;font-size:20px">California</b> on the west coast and <b style="color: #5a14db;font-size:20px">New York</b> in the northeast region. 
+        <br>
+        Relatively, the number of universities in <b style="color: #5a14db;font-size:20px">coastal areas</b> is much higher than in <b style="color: #5a14db;font-size:20px">inland areas</b>.
+      </p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- end pure grid group -->
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1">
+      <p style="font-size:25px; text-align: center;color: #b4465e;">
+       <b>Student population in each state</b>
+   </p>
+</div>
+    <div class="pure-u-1-2">
+      <div id="vis2" style="margin-top: 0%; padding-right:0%; padding-left: 0%"></div>
+    </div>
+    <div class="pure-u-1-2">
+      <div id="vis3" style="margin-top: 0%; padding-right:0%; padding-left: 0%"></div>
+    </div>
+</div>
+<br>
+<br>
+<div class="pure-u-1">
+  <p style="margin-top: 0%;padding-right:0%; padding-left: 3%; color: #b4465e; font-size:17px;text-align: center;">
+    As shown in the two bubble charts above, these two charts are quite <b style="color: #5a14db;font-size:20px">similar</b>. The number of <b style="color: #5a14db;font-size:20px">undergraduate students</b> is roughly the same as the number of <b style="color: #5a14db;font-size:20px">university students</b> in the United States. 
+    <br>
+    Students are mostly distributed in <b style="color: #5a14db;font-size:20px">Oacific</b>, <b style="color: #5a14db;font-size:20px">Mid-Atantic</b> and <b style="color: #5a14db;font-size:20px">South Atlantic</b> regions.
+  </p>
+</div>
+<!-- end pure grid group -->
+<br>
+<br>
+<br>
+
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-1">
+    <p style="font-size:25px; text-align: center;color: #b4465e;">
+     <b>Distribution of public/private universities</b>
+ </p>
+</div>
+  <div class="pure-u-1-2">
+    <div id="vis4" style="margin-top: 0%; padding-right:0%; padding-left: 0%"></div>
+  </div>
+  <div class="pure-u-1-2">
+    <div id="vis5" style="margin-top: 0%; padding-right:0%; padding-left: 10%"></div>
+  </div>
+</div>
+<br>
+<br>
+<div class="pure-u-1">
+<p style="margin-top: 0%;padding-right:0%; padding-left: 3%; color: #b4465e; font-size:17px;text-align: center;">
+  From the <b style="color: #5a14db;font-size:20px">pie chart</b> on the <b style="color: #5a14db;font-size:20px">left above</b>, it can be found that most <b style="color: #5a14db;font-size:20px">public universities</b> are in <b style="color: #5a14db;font-size:20px">South Atlantic</b>, <b style="color: #5a14db;font-size:20px">Mid-Atlantic</b> and <b style="color: #5a14db;font-size:20px">Oacific</b> regions. The pie chart on the <b style="color: #5a14db;font-size:20px">right</b> shows that most <b style="color: #5a14db;font-size:20px">private universities</b> are concentrated in <b style="color: #5a14db;font-size:20px">South Atlantic</b>, <b style="color: #5a14db;font-size:20px">Mid-Atlantic</b> and <b style="color: #5a14db;font-size:20px">East North Central</b>.
+  <br>
+  Through comparison, it can be found that the <b style="color: #5a14db;font-size:20px">proportion</b> of private universities in <b style="color: #5a14db;font-size:20px">New England</b> and <b style="color: #5a14db;font-size:20px">East North Central</b> is much <b style="color: #5a14db;font-size:20px">higher</b> than that of public universities, while the proportion of public universities in <b style="color: #5a14db;font-size:20px">Mountain</b> and <b style="color: #5a14db;font-size:20px">Oacific</b> is higher than that of private universities.
+</p>
+</div>
+<!-- end pure grid group -->
+
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-1">
+    <p style="font-size:25px; text-align: center;color: #b4465e;">
+     <b>Average Alumni Salary</b>
+ </p>
+</div>
+  <div class="pure-u-1">
+    <div id="vis6" style="margin-top: 0%; padding-right:0%; padding-left: 10%"></div>
+  </div>
+</div>
+<br>
+<br>
+<div class="pure-u-1">
+<p style="margin-top: 0%;padding-right:0%; padding-left: 3%; color: #b4465e; font-size:17px;text-align: center;">
+  Overall, the <b style="color: #5a14db;font-size:20px">per capita salary</b> of American university alumni is <b style="color: #5a14db;font-size:20px">not much different</b>. Among them, the salary per capita of university alumni in <b style="color: #5a14db;font-size:20px">New England</b> is the highest, while <b style="color: #5a14db;font-size:20px">East South Central</b> is the lowest.
+</p>
+</div>
+<!-- end pure grid group -->
+  </div> <!-- end page -->
+   
+<script type="text/javascript">
+  var specVis1 = "USA.vg.json";
+  var specVis5= "Pie 2.json";
+  var specVis3 = "Undergraduate.json";
+  var specVis2="bubble chart.json";
+  var specVis4= "Pie 1.json";
+  var specVis6= "bar chart.json";
+
+
+
+  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis6', specVis6, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+
+
+
+</script>
+</body>
+</html>

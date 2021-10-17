@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+      "height": 400,
+      "data":{"url": "https://raw.githubusercontent.com/crycryzzz/vis2/main/111.csv"},
+      "params": [
+        {
+          "name": "Continent_selection",
+          "bind": {
+            "input": "select",
+            "options": [
+              null,
+              "East South Central",
+              "Oacific",
+              "Mountain",
+              "West Sorth Central",
+              "New England",
+              "South Atlantic",
+              "East North Central",
+              "West North Central",
+              "Mid-Atantic"
+            ],
+            "labels":[
+              "Show All",
+              "East South Central",
+              "Oacific",
+              "Mountain",
+              "West Sorth Central",
+              "New England",
+              "South Atlantic",
+              "East North Central",
+              "West North Central",
+              "Mid-Atantic"
+            ],
+            "name": "Continent Selection: "
+          }
+        }
+      ],
+      "transform": [
+          {
+            "filter": "Continent_selection == null || datum.Continent == Continent_selection"
+          }
+        ],
+        "mark":"bar",
+        "encoding": {
+          "x": {
+            "aggregate": "sum",
+            "type": "quantitative",
+            "field":"Alumni Salary",
+            "title":"Alumni Salary"
+          },
+          "y":{
+            "field": "Continent",
+            "type": "nominal",
+            "title": "Region"
+          }
+        }
+      }

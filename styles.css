@@ -1,0 +1,31 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    border-style:solid;
+    border-width:1200px;
+    width: 1200px;
+    background-color: #F6F6EB; 
+    margin: 0 auto;
+    padding: 50px;
+    padding-top: 10px;
+}
+
+
+
+
+
+.vis-container{
+    width: 100%;
+}
+
+
+
+.pure-g{
+    margin-bottom: 30px;
+    display: flex;
+    align-content: space-between;
+    
+}
+

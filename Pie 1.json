@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Number of public universities in each region", "fontSize":20},
+    "width": 350,
+      "height": 225,
+    
+    
+    "data": {
+        "values": [
+            { "Continent": "East North Central", "value": 33 },
+            { "Continent": "East South Central", "value": 18 },
+            { "Continent": "Mid-Atantic", "value": 34 },
+            { "Continent": "South Atlantic", "value": 51 },
+            { "Continent": "Mountain", "value": 26 },
+            { "Continent": "New England", "value": 11 },
+            { "Continent": "Oacific", "value": 33 },
+            { "Continent": "West North Central", "value": 23 },
+            { "Continent": "West Sorth Central", "value": 21 }
+        ]
+    },
+    "padding":5,
+    "mark": { "type": "arc" },
+    "encoding": {
+        "theta": {
+            "field": "value",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": {
+                "domain": ["East North Central", "East South Central","Mid-Atantic","South Atlantic","Mountain","New England","Oacific","West North Central","West Sorth Central"],
+                "range": ["#EA0000", "#FF359A","#FF00FF","#6A6AFF","#00FFFF","#1AFD9C","#F9F900","#FF5809","#C07AB8"]
+            },
+            "legend":{
+                "labelLimit": 200,
+                "columns":1
+            }
+            },
+            "order": {
+             "field": "order"
+            },
+            "tooltip":[{"field": "Continent", "title":"Type", "type": "nominal"},
+             {"field": "value", "type": "quantitative"}
+        
+        
+  ]
+          }
+     }
