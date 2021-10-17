@@ -13,7 +13,7 @@
         "lookup":"properties.NAME",
         "from":{
             "data":{
-                 "url": "https://raw.githubusercontent.com/crycryzzz/vis2/main/population.csv"
+                 "url": "https://raw.githubusercontent.com/crycryzzz/Assignment-2/main/population.csv"
         },
         "key": "NAME",
         "fields": ["Number of universities"]
